@@ -14,11 +14,18 @@ import {
   textPlaceholder,
   useDimensions,
 } from "./SidebarStyles";
+import useClickOutside from "./useClickOutside";
 
 export default function AnimatedSidebarMenu() {
   const [isOpen, setIsOpen] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const { height } = useDimensions(containerRef);
+
+  useClickOutside(containerRef, () => {
+    if (isOpen) {
+      setIsOpen(false);
+    }
+  });
 
   return (
     <div style={container}>
