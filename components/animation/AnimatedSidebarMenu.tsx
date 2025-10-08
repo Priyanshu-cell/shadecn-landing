@@ -14,7 +14,7 @@ import {
   textPlaceholder,
   useDimensions,
 } from "./SidebarStyles";
-import useClickOutside from "./useClickOutside";
+import useClickOutside from "../hooks/useClickOutside";
 
 export default function AnimatedSidebarMenu() {
   const [isOpen, setIsOpen] = useState(false);
@@ -116,7 +116,7 @@ const sidebarVariants: Variants = {
     },
   }),
   closed: {
-    clipPath: "circle(30px at 260px 40px)",
+    clipPath: "circle(20px at 260px 40px)",
     transition: {
       delay: 0.2,
       type: "spring",
